@@ -6,7 +6,7 @@ const invoice = () => {
         url: 'https://demo-paygate.steaminventoryhelper.com/invoice',
         method: 'post',
         data: {
-            ip: '127.0.0.1' // callback ip
+            ip: 'testpay.clouddocs.pw' // callback ip
         },
     }).then(result => result.data);
 
