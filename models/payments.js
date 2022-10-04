@@ -20,7 +20,8 @@ const getByExtId = (extId) => {
 }
 
 const updateStatusAndAmount = (id, status, amount) => {
-
+    const sql = 'UPDATE public.payments SET status = $1, amount = $2 WHERE id = $3';
+    return pg.query(sql, [status, amount, id]);
 }
 
 module.exports = {
