@@ -24,8 +24,14 @@ const updateStatusAndAmount = (id, status, amount) => {
     return pg.query(sql, [status, amount, id]);
 }
 
+const getAll = () => {
+    const sql = 'SELECT * FROM public.payments';
+    return pg.query(sql, []).then(result => result.rows);
+}
+
 module.exports = {
     create,
     updateStatusAndAmount,
-    getByExtId
+    getByExtId,
+    getAll
 }

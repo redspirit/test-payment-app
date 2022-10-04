@@ -72,4 +72,18 @@ router.post('/payment', async (req, res) => {
 
 });
 
+router.get('/api/users', async (req, res) => {
+
+    const items = await usersModel.getAll();
+    res.send(items);
+
+});
+
+router.get('/api/payments', async (req, res) => {
+
+    const items = await paymentsModel.getAll();
+    res.send(items);
+
+});
+
 module.exports = router;

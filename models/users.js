@@ -15,7 +15,14 @@ const create = (name) => {
     return pg.query(sql, data).then(result => data[0]); // return new id
 }
 
+const getAll = () => {
+    const sql = 'SELECT * FROM public.users_view';
+    return pg.query(sql, []).then(result => result.rows);
+}
+
+
 module.exports = {
     getByName,
-    create
+    create,
+    getAll
 }
